@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.nbmlon.customcalender_myfirstapp",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0",
+      "outputFile": "app-release.apk"
+    }
+  ],
+  "elementType": "File"
+
+  [
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "",
+        "sha256_cert_fingerprints":
+          ["DB:81:22:A5:57:9C:EE:4E:70:28:8B:AD:98:AA:70:93:5E:03:0B:F2:BC:25:96:D2:D0:10:E5:E3:B6:A2:CD:38"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/semi_trans"
+    >
+
+    <!-- Picker Input Frame For Search -->
+    <RelativeLayout
+        android:id="@+id/search_InputFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/mainColor"
+        >
+        <ImageView
+            android:id="@+id/search_in_btnBack"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginVertical="5dp"
+            android:src ="@drawable/icon_back"
+            android:clickable="true"
+
+            android:layout_centerVertical="true"
+
+            />
+
+        <EditText
+            android:id="@+id/search_in_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@id/search_in_btnClear"
+            android:layout_toRightOf="@id/search_in_btnBack"
+            android:hint="검색..."
+            android:inputType="text"
+            android:maxLength="50"
+
+            android:maxLines="1"
+            android:padding="10dp"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/signature_blue"
+            android:textSize="12dp"
+            />
+
+        <!-- Clear Btn -->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/search_in_btnClear"
+            android:background="@drawable/ic_clear"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toLeftOf="@id/search_in_btnSearch"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:layout_centerVertical="true"
+            />
+
+        <ImageView
+            android:id="@+id/search_in_btnSearch"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_search"
+            android:clickable="true"
+
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            />
+
+
+    </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/search_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+
+            android:layout_marginVertical="2dp"
+            >
+            <RadioButton
+                android:id="@+id/search_btn_ForTitle"
+                android:background="@drawable/radiogroup_bg"
+                android:textColor="@drawable/radiogroup_text"
+                android:button="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:text="제목"
+                android:textSize="9dp"
+                android:gravity="center"
+                android:clickable="true"
+
+                />
+            <RadioButton
+                android:id="@+id/search_btn_ForContent"
+                android:background="@drawable/radiogroup_bg"
+                android:textColor="@drawable/radiogroup_text"
+                android:button="@null"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+
+                android:text="내용"
+                android:textSize="9dp"
+                android:gravity="center"
+                android:clickable="true"
+
+
+                />
+
+            <RadioButton
+                android:id="@+id/search_btn_ForTiCon"
+                android:background="@drawable/radiogroup_bg"
+                android:textColor="@drawable/radiogroup_text"
+                android:button="@null"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+
+                android:text="제목 + 내용"
+                android:textSize="9dp"
+                android:gravity="center"
+
+                android:clickable="true"
+
+                />
+
+
+        </RadioGroup>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRes_RV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+
+
+
+
+</LinearLayout>

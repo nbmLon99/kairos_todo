@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/sub_rvDone_Frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="15dp"
+        android:orientation="vertical"
+        android:background="@color/subLeftLayoutColor">
+
+        <LinearLayout
+            android:id="@+id/sub_rvDone_content_Frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                >
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/sub_rvDone_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toLeftOf="@id/sub_rvDone_image"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Title이 들어갈 곳입니다."
+                        android:textColor="@color/mainTextColor"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        />
+
+
+
+                    <!-- Content -->
+                    <TextView
+                        android:id="@+id/sub_rvDone_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/sub_rvDone_time"
+                        android:layout_below="@id/sub_rvDone_title"
+                        android:layout_toLeftOf="@id/sub_rvDone_image"
+                        android:layout_marginHorizontal="7dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+
+                        android:padding="5dp"
+                        android:text="content가 들어갈 곳입니다.\n 두번쨰 둘 \n 세번쨰 줄"
+                        android:textColor="@color/mainTextColor"
+                        android:textSize="7dp" />
+
+
+                    <!-- Uploaded Image -->
+                    <ImageView
+                        android:id="@+id/sub_rvDone_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_toLeftOf="@id/sub_rvDone_time"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="8dp"
+
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+
+
+                    <ImageView
+                        android:id="@+id/sub_rvDone_icon_multiImg"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_margin="3dp"
+                        android:layout_alignRight="@id/sub_rvDone_image"
+                        android:layout_alignBottom="@id/sub_rvDone_image"
+                        android:src="@drawable/icon_multi_pic"
+                        android:visibility="gone"
+                        />
+
+
+
+                    <!-- Icon More -->
+                    <ImageView
+                        android:id="@+id/sub_rvDone_icon_more"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginHorizontal="6dp"
+                        android:src="@drawable/icon_dots" />
+
+
+                    <!-- Time -->
+                    <TextView
+                        android:id="@+id/sub_rvDone_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="10dp"
+
+                        android:gravity="end"
+                        android:text="완료 시간을 기록합니다.(hh:mm a)"
+                        android:textColor="@color/subTextColor"
+                        android:textSize="6dp" />
+
+                </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/sub_rvDone_sepLine"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:src="@color/signature_blue_hover"
+        />
+
+
+
+
+
+
+</LinearLayout>
+

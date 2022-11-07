@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="@drawable/dialog_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="40dp"
+    android:layout_marginVertical="50dp"
+    android:orientation="vertical"
+    >
+
+    <!-- Title Frame -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="60dp"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/dl_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:background="@color/trans"
+            android:ellipsize="marquee"
+
+            android:focusable="true"
+            android:fontFamily="@font/naver_wjddms"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+
+            android:text="Todo 제목이 들어갈 곳입니다."
+            android:textColor="@color/mainTextColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/dl_et_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/trans"
+            android:layout_weight="1.1"
+
+            android:maxLines="1"
+            android:inputType="text"
+            android:maxLength="50"
+            android:focusable="true"
+
+            android:textSize="20dp"
+            android:fontFamily="@font/naver_wjddms"
+            android:textColor="@color/mainTextColor"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+
+    <!-- Sep Line -->
+    <ImageView
+        android:src="@color/sep_line_color"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="40dp"
+        />
+
+
+
+    <!-- Other Frame -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <!-- Content Frame -->
+        <EditText
+            android:id="@+id/dl_et_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/dl_tv_time"
+            android:layout_alignParentTop="true"
+            android:background="@color/trans"
+            android:gravity="start"
+            android:hint="기록할 내용을 입력해 주세요."
+            android:padding="50dp"
+
+            android:scrollbarThumbVertical="@color/signature_blue"
+            android:scrollbars="vertical"
+
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/mainTextColor"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/dl_tv_time"
+            android:text="시간을 기록할 곳입니다."
+            android:textColor="@color/mainTextColor"
+            android:gravity="right"
+            android:textSize="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_above="@id/dl_second_sep"
+
+            android:layout_marginBottom="20dp"
+            android:paddingRight="50dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/dl_second_sep"
+            android:src="@color/sep_line_color"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="2dp"
+            android:layout_above="@id/dl_Bottom_Frmae"
+            />
+
+
+        <!-- Bottom Frome -->
+        <LinearLayout
+            android:id="@+id/dl_Bottom_Frmae"
+            android:background="@color/trans"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="40dp"
+            android:weightSum="10"
+            >
+            <!-- Image  -->
+            <com.nbmlon.dialogmodule.record.ImageUploadingFrame
+                android:id="@+id/dl_HR_images"
+                android:gravity="center_vertical"
+                android:background="@color/trans"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                />
+
+            <!-- Button Frame -->
+            <LinearLayout
+                android:background="@color/trans"
+                android:layout_weight="4"
+                android:weightSum="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:src="@color/sep_line_color"
+                    android:paddingVertical="15dp"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    />
+
+
+
+                    <ImageView
+                        android:id="@+id/dl_btn_gallery"
+                        android:src="@drawable/icon_gallary"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="3dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/dl_btn_cancel"
+                        android:src="@drawable/icon_cancel"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="3dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/dl_btn_done"
+                        android:src="@drawable/icon_done"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="3dp"
+                        />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
