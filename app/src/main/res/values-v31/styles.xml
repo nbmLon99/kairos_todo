@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="Widget.CustomCalender_MyFirstApp.AppWidget.Container" parent="android:Widget">
+        <item name="android:padding">?attr/appWidgetPadding</item>
+        <item name="android:background">@color/mainColor</item>
+        <item name="android:clipToOutline">true</item>
+    </style>
+
+    <style name="Widget.CustomCalender_MyFirstApp.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:padding">?attr/appWidgetPadding</item>
+        <item name="android:background">@color/mainColor</item>
+        <item name="android:clipToOutline">true</item>
+    </style>
+</resources>

@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- dialogTheme -->
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/signature_blue</item>
+        <item name="android:buttonBarButtonStyle">@style/DatePickerTheme.ButtonStyle</item>
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <item name="android:textColorPrimary">@color/mainTextColor</item>
+        <item name="android:textColorSecondary">@color/signature_blue</item>
+    </style>
+
+    <style name="DatePickerTheme.ButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/signature_blue</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:fontFamily">casual</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="dialogTheme_nofloating" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowBackground">@color/trans</item>
+        <item name="backgroundColor">@color/trans</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    
+
+
+</resources>

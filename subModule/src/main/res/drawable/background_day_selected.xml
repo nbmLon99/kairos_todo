@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="center">
+        <shape android:shape="oval" >
+            <solid android:color="@color/signature_blue" />
+            <size android:height="35sp" android:width="35sp"/>
+        </shape>
+    </item>
+</layer-list>

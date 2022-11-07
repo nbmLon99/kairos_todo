@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trans"
+    >
+
+
+    <LinearLayout
+        android:background="@drawable/dialog_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="50dp"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/detail_icon_more"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/icon_dots" />
+            <ImageView
+                android:id="@+id/detail_icon_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_back"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                />
+
+            <RelativeLayout
+                android:id="@+id/detail_title_Frame"
+                android:layout_width="match_parent"
+                android:layout_height= "50dp"
+                android:layout_marginHorizontal="60dp"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/detail_title"
+                    android:background="@color/trans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text="Todo 제목이 들어갈 곳입니다."
+
+                    android:maxLines="1"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:focusable="true"
+
+                    android:textSize="20dp"
+                    android:fontFamily="@font/naver_wjddms"
+                    android:textColor="@color/mainTextColor"
+
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- Content Frame -->
+
+        <ImageView
+            android:id="@+id/dialog_dp_top_sepline"
+            android:src="@color/signature_blue"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="2dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            />
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.nbmlon.dialogmodule.display.ImagePickerSlide
+                android:id="@+id/detail_imageRV"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/detail_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/detail_time"
+                android:layout_below="@id/detail_imageRV"
+                android:background="@color/trans"
+                android:gravity="start"
+                android:hint="기록된 내용이 없습니다."
+                android:padding="30dp"
+                android:scrollbarStyle="outsideOverlay"
+
+                android:scrollbarThumbVertical="@color/signature_blue"
+                android:scrollbars="vertical"
+
+                android:textColor="@color/mainTextColor"
+                android:textColorHint="@color/subTextColor"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/detail_time"
+                android:text="시간을 기록할 곳입니다."
+                android:textColor="@color/subTextColor"
+                android:gravity="right"
+                android:textSize="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:paddingRight="50dp"
+                />
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

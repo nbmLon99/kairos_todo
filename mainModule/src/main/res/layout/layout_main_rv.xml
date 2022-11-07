@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:rotation="180"
+    >
+
+    <LinearLayout
+            android:id="@+id/itemBox"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@color/mainColor"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:rotation="180"
+            android:descendantFocusability="blocksDescendants"
+            >
+
+            <TextView
+                android:id="@+id/rv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="1"
+                android:focusable="true"
+
+                android:text="Todo제목"
+                android:textColor="@color/mainTextColor"
+                />
+            <CheckBox
+                android:id="@+id/rv_ckbox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="-35dp"
+                android:gravity="right"
+                android:buttonTint="@color/mainTextColor"
+                />
+
+
+
+        </LinearLayout>
+
+
+</RelativeLayout>

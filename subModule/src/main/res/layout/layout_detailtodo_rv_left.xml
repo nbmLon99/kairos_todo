@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <!-- Output Frame -->
+    <RelativeLayout
+        android:id="@+id/sub_rvLeft_DefaultFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/subLeftLayoutColor"
+        >
+
+        <TextView
+            android:id="@+id/sub_rvLeft_tv"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/sub_rvLeft_icon_more"
+            android:text="@string/detail_rv_left"
+            android:textColor="@color/mainTextColor"
+            android:textSize="12dp"
+            />
+        <ImageView
+            android:id="@+id/sub_rvLeft_icon_more"
+            android:background="@drawable/icon_dots"
+            android:backgroundTint="@color/subTextColor"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/sub_rvLeft_tv"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="20dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            />
+
+    </RelativeLayout>
+
+
+    <!-- Input Frame -->
+    <RelativeLayout
+        android:id="@+id/sub_rvLeft_InputFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+
+        <com.nbmlon.submodule.EditText_withBackAlert
+            android:background="@color/trans"
+            android:id="@+id/sub_rvLeft_etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="@integer/TITLE_MAX_LEN"
+            android:layout_marginLeft="30dp"
+            android:layout_toLeftOf="@id/sub_rvLeft_btnClear"
+            android:padding="10dp"
+            android:textColor="@color/subTextColor"
+
+            android:maxLines="1"
+            android:inputType="text"
+            android:hint="제목..."
+            android:textColorHint="@color/light_gray"
+            android:textSize="12dp"
+            />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/sub_rvLeft_btnClear"
+            android:background="@drawable/ic_clear"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toLeftOf="@id/sub_rvLeft_btnDone"
+            android:padding="3dp"
+            android:layout_margin="5dp"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/sub_rvLeft_btnDone"
+            android:background="@drawable/bg_btn_boundary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+
+            android:text="수 정"
+            android:textSize="10dp"
+            android:textColor="@color/subTextColor"
+
+            android:clickable="true"
+            />
+
+
+    </RelativeLayout>
+
+
+    <!-- Sep Line -->
+    <ImageView
+        android:id="@+id/sub_rvLeft_SepLine"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:src="@color/left_sep_color"
+        android:layout_gravity="bottom"
+        />
+</FrameLayout>

@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="Widget.CustomCalender_MyFirstApp.AppWidget.Container" parent="android:Widget">
+        <item name="android:background">@color/mainColor</item>
+    </style>
+
+    <style name="Widget.CustomCalender_MyFirstApp.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:background">@color/mainColor</item>
+    </style>
+</resources>

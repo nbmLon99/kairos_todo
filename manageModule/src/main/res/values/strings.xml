@@ -1,0 +1,14 @@
+<resources>
+    <string name="today">Today</string>
+    <string name="month">month</string>
+    <string name="main_et_btn">Click to Add</string>
+    <string name="main_et_hint">Write to Add</string>
+    <string name="detail_rv_left">Lefted Todo Title</string>
+
+    <string name="DateFormat">yyyyMMdd</string>
+    <string name="DatePickerFormat">YYYY년 MM월 dd일</string>
+
+    <string name="admob_app_id">ca-app-pub-8371129918641607~5557376291</string>
+    <string name="admob_banner_id">ca-app-pub-8371129918641607/1426559596</string>
+
+</resources>

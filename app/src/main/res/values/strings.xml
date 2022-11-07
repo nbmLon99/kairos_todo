@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">기회의신카이로스는뒷머리가없어-할일관리앱</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">나의 달력 위젯</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="tutorial_1">짧게 눌러 다른 날짜의 계획을 관리합니다.\n길게 눌러 나만의 달력 이미지를 설정할 수 있습니다.</string>
+    <string name="tutorial_2">매일매일 할 일을 기록하며 나만의 달력을 꾸며나가세요.\n</string>
+    <string name="tutorial_3">기록된 달력을 확인할 수 있습니다.\n</string>
+
+</resources>

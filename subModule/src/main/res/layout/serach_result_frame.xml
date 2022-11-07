@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/layoutDarkGray"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="40dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/searchRes_Frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="bottom"
+            android:layout_centerVertical="true"
+            >
+
+            <TextView
+                android:id="@+id/searchRes_title"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:maxLength="15"
+                android:text="제목이 들어갈 곳 입니다."
+                android:textSize="10dp"
+
+
+                />
+
+            <TextView
+                android:id="@+id/searchRes_content"
+
+                android:paddingHorizontal="20dp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/searchRes_title"
+                android:layout_toLeftOf="@id/searchRes_Date"
+                android:layout_alignBottom="@id/searchRes_title"
+
+
+                android:textColor="@color/light_gray"
+                android:maxLines="1"
+                android:maxLength="20"
+                android:textSize="7dp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/searchRes_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/searchRes_Frame"
+
+            android:textColor="@color/light_gray"
+            android:maxLines="1"
+            android:text="날짜가 들어갈 곳 입니다."
+            android:maxLength="20"
+            android:textSize="7dp"
+            />
+    </RelativeLayout>
+
+    <!-- Sep Line -->
+    <ImageView
+        android:src="@color/sublayoutColor"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="20dp"
+        />
+
+</FrameLayout>
