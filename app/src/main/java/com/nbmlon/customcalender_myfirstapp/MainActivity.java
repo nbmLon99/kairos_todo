@@ -62,13 +62,13 @@ public class MainActivity extends AppCompatActivity implements cropListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
 
-        ((Runnable) () -> { CustomCalender.getAds(MainActivity.this, findViewById(R.id.main_adView)); }).run();
+        CustomCalender.getAds(MainActivity.this, findViewById(R.id.main_adView));
 
         Intent intent = getIntent();
         boolean MonthChanged = intent.getBooleanExtra("YearMonthChanged",false);
         if( MonthChanged ) {
             int lastyyyyMM = intent.getIntExtra("yearMonth", -1);
-            ((Runnable) () -> monthChanged(lastyyyyMM)).run();
+            monthChanged(lastyyyyMM);
         }
 
 

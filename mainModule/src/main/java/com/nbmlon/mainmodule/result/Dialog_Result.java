@@ -53,7 +53,6 @@ public class Dialog_Result extends Dialog {
 
         resMonth.setText(mYear + ". " + mMonth + ".");
 
-        ((Runnable) () -> {
             btnDelete.setOnClickListener(v -> {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("기록 삭제").setMessage("기록 삭제 시, 내용을 다시 불러올 수 없습니다.\n삭제 하시겠습니까?");
@@ -78,7 +77,6 @@ public class Dialog_Result extends Dialog {
                     });
                 }
             });
-        }).run();
 
         resImage.post(() -> {
             int w = resImage.getWidth();

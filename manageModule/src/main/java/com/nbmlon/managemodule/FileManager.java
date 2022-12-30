@@ -59,7 +59,7 @@ public abstract class FileManager {
 
 
         public void saveImageUrisToJPEG(ArrayList<Uri> uris){
-            ((Runnable) () -> {
+            new Thread((Runnable) () -> {
                 try {
                     ArrayList<Bitmap> bitmaps = new ArrayList<>();
                     for (Uri uri : uris) {
@@ -104,7 +104,7 @@ public abstract class FileManager {
 
         /** Delete Saved File with folder **/
         public void deleteSavedFile() {
-            ((Runnable) () -> {
+            new Thread((Runnable) () -> {
                 File folder = new File(mStroage.getAbsolutePath() + "/" + firstFolder + "/" + secondFolder);
                 if (!folder.exists())
                     return;

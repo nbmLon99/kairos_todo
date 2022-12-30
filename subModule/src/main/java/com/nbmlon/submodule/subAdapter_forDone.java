@@ -187,7 +187,7 @@ public class subAdapter_forDone extends RecyclerView.Adapter<subAdapter_forDone.
         holder.dstTodoitem = mTodoList.get(position);
         Todoitem DstTodoitem = holder.dstTodoitem;
 
-        ((Runnable) () -> {
+        new Thread((Runnable) () -> {
             int photolen = DstTodoitem.getPhotoLen();
             if (photolen == 0) {
                 myViewHolder.sub_rv_image.setVisibility(View.GONE);

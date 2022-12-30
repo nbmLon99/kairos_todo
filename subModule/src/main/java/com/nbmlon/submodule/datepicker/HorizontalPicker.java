@@ -100,9 +100,12 @@ public class HorizontalPicker extends LinearLayout implements HorizontalPickerLi
         tvToday.setOnClickListener(rvDays);
         tvToday.setVisibility(showTodayButton ? VISIBLE : GONE);
 
-        ((Runnable) () -> rvDays.init(
-                new DateTime(),
-                getContext())).run();
+        new Thread(() ->
+                rvDays.init(
+                    new DateTime(),
+                    getContext()
+                )
+        ).run();
 
 
 

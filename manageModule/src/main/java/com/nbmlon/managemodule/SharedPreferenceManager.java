@@ -97,7 +97,7 @@ public abstract class SharedPreferenceManager {
 
 
         public void saveDay(Integer LastAccessYearMonth){
-            ((Runnable) () -> {
+            new Thread((Runnable) () -> {
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("LastAccessYearMonth", LastAccessYearMonth);
                 editor.commit();

@@ -24,19 +24,21 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_window);
         JodaTimeAndroid.init(this);
-        ((Runnable) () -> {
-            FileManager.Gallery fm = new FileManager.Gallery(getApplicationContext());
-            CustomCalender.RESULT_MONTHS = fm.getPossibleGalleryYear();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                FileManager.Gallery fm = new FileManager.Gallery(getApplicationContext());
+                CustomCalender.RESULT_MONTHS = fm.getPossibleGalleryYear();
 
-            int win_color = getColor(com.nbmlon.managemodule.R.color.WIN_COLOR);
-            int drw_color = getColor(com.nbmlon.managemodule.R.color.DRW_COLOR);
-            int los_color = getColor(com.nbmlon.managemodule.R.color.LOS_COLOR);
-            int today_color = getColor(com.nbmlon.managemodule.R.color.TODAY_COLOR);
+                int win_color = getColor(com.nbmlon.managemodule.R.color.WIN_COLOR);
+                int drw_color = getColor(com.nbmlon.managemodule.R.color.DRW_COLOR);
+                int los_color = getColor(com.nbmlon.managemodule.R.color.LOS_COLOR);
+                int today_color = getColor(com.nbmlon.managemodule.R.color.TODAY_COLOR);
 
-            myCalender.CalenderSetting(win_color, drw_color, los_color, today_color);
+                myCalender.CalenderSetting(win_color, drw_color, los_color, today_color);
 
+            }
         }).run();
-
 
         SharedPreferenceManager.DayLoader dayLoader = new SharedPreferenceManager.DayLoader(this);
         CustomCalender.LastAccessYearMonth = dayLoader.getDay();

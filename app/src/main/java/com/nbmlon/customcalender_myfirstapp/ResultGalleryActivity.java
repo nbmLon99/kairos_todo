@@ -41,7 +41,7 @@ public class ResultGalleryActivity extends AppCompatActivity implements DeleteLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_gallery);
 
-        ((Runnable) () -> {CustomCalender.getAds(ResultGalleryActivity.this, findViewById(R.id.gallery_adView));}).run();
+        CustomCalender.getAds(ResultGalleryActivity.this, findViewById(R.id.gallery_adView));
 
         tv = findViewById(R.id.resglr_tv);
         gl = findViewById(R.id.resglr_gl);
@@ -60,13 +60,12 @@ public class ResultGalleryActivity extends AppCompatActivity implements DeleteLi
         mPosition = CustomCalender.RESULT_MONTHS.size()-1;
         mDstYear = CustomCalender.RESULT_MONTHS.get(mPosition);
         if (CustomCalender.RESULT_MONTHS.size() > 1){
-            ((Runnable) () -> {
-                icon_back.setVisibility(View.VISIBLE);
+               icon_back.setVisibility(View.VISIBLE);
                 icon_back.setOnClickListener(v -> {
                     mPosition--;
                     mDstYear = CustomCalender.RESULT_MONTHS.get(mPosition);
                     tv.setText("" + mDstYear);
-                    ((Runnable) () -> setGallery()).run();
+                    new Thread(() -> setGallery()).run();
                     icon_back.setVisibility(mPosition <= 0 ? View.GONE : View.VISIBLE);
                     icon_next.setVisibility(mPosition >= CustomCalender.RESULT_MONTHS.size() - 1 ?
                             View.GONE : View.VISIBLE);
@@ -77,12 +76,11 @@ public class ResultGalleryActivity extends AppCompatActivity implements DeleteLi
                     mDstYear = CustomCalender.RESULT_MONTHS.get(mPosition);
                     tv.setText(Integer.toString(mDstYear));
 
-                    ((Runnable) () -> setGallery()).run();
+                    new Thread(() -> setGallery()).run();
                     icon_back.setVisibility(mPosition <= 0 ? View.GONE : View.VISIBLE);
                     icon_next.setVisibility(mPosition >= CustomCalender.RESULT_MONTHS.size() - 1 ?
                             View.GONE : View.VISIBLE);
                 });
-            }).run();
         }
         else{
             icon_back.setVisibility(View.GONE);

@@ -63,17 +63,14 @@ public class CropView {
             }
         });
 
-        ((Runnable) () -> {
-            btn_crop.setOnClickListener(v -> {
-                cl.cropDone(mCropIV);
-                parent.removeView(crop_view);
-            });
+        btn_crop.setOnClickListener(v -> {
+            cl.cropDone(mCropIV);
+            parent.removeView(crop_view);
+        });
 
-            btn_resize.setOnClickListener(v -> Resize());
+        btn_resize.setOnClickListener(v -> Resize());
+        btn_cancel.setOnClickListener(v -> parent.removeView(crop_view));
 
-            btn_cancel.setOnClickListener(v -> parent.removeView(crop_view));
-
-        }).run();
 
 
         parent.addView(crop_view);

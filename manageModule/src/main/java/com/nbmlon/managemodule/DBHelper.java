@@ -134,7 +134,7 @@ public class DBHelper extends SQLiteOpenHelper {
             db.execSQL("Insert into '" + mTableName + "' ('Title') " +
                     "Values ('" + title.replace("\'","\'\'") + "');");
 
-            ((Runnable) () -> UpdateMarker(CASE_ADD)).run();
+            new Thread(() -> UpdateMarker(CASE_ADD)).run();
 
             return true;
         }

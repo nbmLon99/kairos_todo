@@ -51,7 +51,7 @@ public class subActivity extends AppCompatActivity implements DatePickerListener
         setContentView(R.layout.layout_sub);
         InitSetting();
 
-        ((Runnable) () -> {CustomCalender.getAds(subActivity.this, findViewById(R.id.sub_adView));}).run();
+        CustomCalender.getAds(subActivity.this, findViewById(R.id.sub_adView));
 
 
 
@@ -121,21 +121,32 @@ public class subActivity extends AppCompatActivity implements DatePickerListener
         boolean isPast = dateSelected.getMillis() - new DateTime().withTime(0,0,0,0).getMillis() < 0;
 
         DBHelper dstDBhelper = new DBHelper(this, dateSelected );
-        ((Runnable) () -> {
-            mAdapter_for_done = new subAdapter_forDone(subActivity.this, dateSelected.toString("yyyyMMdd"), dstDBhelper);
-            mDetailTodoRV_ForDone.setAdapter(mAdapter_for_done);
-            if (mInputFrame.getVisibility() == View.VISIBLE) {
-                mInputET.clearFocus();
-                mInputET.getText().clear();
-                mInputFrame.setVisibility(View.GONE);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mAdapter_for_done = new subAdapter_forDone(subActivity.this, dateSelected.toString("yyyyMMdd"), dstDBhelper);
+                mDetailTodoRV_ForDone.setAdapter(mAdapter_for_done);
+                if (mInputFrame.getVisibility() == View.VISIBLE) {
+                    mInputET.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mInputET.clearFocus();
+                            mInputET.getText().clear();
+                            mInputFrame.setVisibility(View.GONE);
+                        }
+                    });
+                }
             }
         }).run();
 
-        ((Runnable) () -> {
-            mAdapter_for_left = new subAdapter_forLeft(subActivity.this, dateSelected.toString("yyyyMMdd"), dstDBhelper);
-            mDetailTodoRV_ForLeft.setAdapter(mAdapter_for_left);
-            mAdapter_for_left.setPast(isPast);
-            mAdapter_for_left.setInputListener(subActivity.this);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mAdapter_for_left = new subAdapter_forLeft(subActivity.this, dateSelected.toString("yyyyMMdd"), dstDBhelper);
+                mDetailTodoRV_ForLeft.setAdapter(mAdapter_for_left);
+                mAdapter_for_left.setPast(isPast);
+                mAdapter_for_left.setInputListener(subActivity.this);
+            }
         }).run();
 
         mInputFrame.setVisibility(View.GONE);
